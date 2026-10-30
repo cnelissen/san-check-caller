@@ -1,0 +1,10 @@
+name: run
+on: workflow_dispatch
+permissions: {}
+jobs:
+  nested:
+    permissions: {id-token: write, contents: read}
+    uses: cnelissen/san-check-workflows/.github/workflows/middle.yml@v1
+  direct:
+    permissions: {id-token: write, contents: read}
+    uses: cnelissen/san-check-workflows/.github/workflows/inner.yml@v1
